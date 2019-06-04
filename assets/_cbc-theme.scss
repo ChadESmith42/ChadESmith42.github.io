@@ -1,0 +1,32 @@
+@import '~@angular/material/theming';
+// @import '../../../node_modules/@angular/material/theming';
+@include mat-core();
+$cbc-app-primary: mat-palette($mat-indigo);
+$cbc-app-accent: mat-palette($mat-amber, A200, A100, A400);
+$cbc-app-dark: mat-palette($mat-grey);
+$cbc-app-dark-accent: mat-palette($mat-amber, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$cbc-app-warn: mat-palette($mat-red);
+$cbc-app-warn-dark: mat-palette($mat-orange, A200, A100, A400);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$cbc-app-theme: mat-light-theme($cbc-app-primary, $cbc-app-accent, $cbc-app-warn);
+$cbc-app-dark: mat-dark-theme($cbc-app-dark, $cbc-app-dark-accent, $cbc-app-warn-dark);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($cbc-app-theme);
+
+.cbc-theme {
+  @include angular-material-theme($cbc-app-theme);
+}
+
+;
+
+.cbc-dark {
+  @include angular-material-theme($cbc-app-dark);
+}
+
+;
